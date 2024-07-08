@@ -1,0 +1,22 @@
+<div *ngIf="companies.length">
+    <div class="flex flex-col gap-y-10">
+        <h1 class="text-center text-6xl">Companies</h1>
+        <div class="flex flex-row justify-center">
+            <app-button label="Add company"></app-button>
+        </div>
+        <ul class="bg-slate-50 p-5 w-3/6 mx-auto">
+          <li *ngFor="let company of companies">
+            <div class="flex flex-row justify-between mb-10">
+                <p class="font-semibold">
+                    {{ company.name }}
+                </p>
+                <div class="flex flex-row gap-x-2">
+                    <app-button label="See clients" href="/clients"></app-button>
+                    <app-button label="Delete" (click)="deleteCompany(company.id); $event.preventDefault()"></app-button>
+                </div>
+            </div>
+          </li>
+        </ul>
+    </div>
+  </div>
+  

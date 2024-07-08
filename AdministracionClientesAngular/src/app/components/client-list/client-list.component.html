@@ -1,0 +1,22 @@
+{{ theId }}
+<div *ngIf="company">
+    <div class="flex flex-col gap-y-10">
+        <h1 class="text-center text-6xl">Clients of {{company.name}}</h1>
+        <div class="flex flex-row justify-center">
+            <app-button label="Add company"></app-button>
+        </div>
+        <ul class="bg-slate-50 p-5 w-3/6 mx-auto">
+          <li *ngFor="let client of company.clients">
+            <div class="flex flex-row justify-between mb-10">
+                <p class="font-semibold">
+                    {{ client.firstName }}
+                </p>
+                <div class="flex flex-row gap-x-2">
+                    <!-- <app-button label="See clients" [routerLink]="['/clients/bycompany', company.companyId]" href="/clients"></app-button> -->
+                </div>
+            </div>
+          </li>
+        </ul>
+    </div>
+  </div>
+  
