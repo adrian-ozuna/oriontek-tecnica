@@ -1,0 +1,29 @@
+<app-layout>
+    <div class="flex justify-content-center">
+        <form (ngSubmit)="onSubmit()" #form="ngForm">
+            <div class="card p-5 bg-blue-50 border-round flex flex-column gap-4 justify-content-stretch">
+              <div class="flex flex-column gap-2">
+                <label for="firstName">First name</label>
+                <input 
+                  pInputText 
+                  id="firstName" 
+                  name="firstName" 
+                  [(ngModel)]="client.firstName" 
+                  required/>
+              </div>
+              <div class="flex flex-column gap-2">
+                <label for="lastName">Last name</label>
+                <input 
+                  pInputText 
+                  id="lastName" 
+                  name="lastName" 
+                  [(ngModel)]="client.lastName" 
+                  required/>
+              </div> 
+              <p-button type="submit" class="w-max">Add client</p-button>
+              <p-button class="w-max" [routerLink]="['/']" severity="danger">Discard</p-button>
+            </div>
+          </form>
+          
+    </div>
+</app-layout>
