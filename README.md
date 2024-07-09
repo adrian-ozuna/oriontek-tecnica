@@ -1,2 +1,2 @@
 # oriontek-tecnica
-![Screenshot]([http://url/to/img.png](https://imgur.com/a/5puNzOT))
+![screenshot](https://i.imgur.com/ECXach9.png)
