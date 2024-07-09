@@ -1,0 +1,23 @@
+<app-layout>
+    <div class="flex justify-content-center">
+      <form (ngSubmit)="onSubmit()" #form="ngForm">
+        <div class="card p-5 bg-blue-50 border-round flex flex-column gap-4 justify-content-stretch">
+          <div class="flex flex-column gap-2">
+            <label for="street">Street</label>
+            <input pInputText id="street" name="street" [(ngModel)]="address.street" required />
+          </div>
+          <div class="flex flex-column gap-2">
+            <label for="city">City</label>
+            <input pInputText id="city" name="city" [(ngModel)]="address.city" required />
+          </div>
+          <div class="flex flex-column gap-2">
+            <label for="city">Zipcode</label>
+            <input pInputText id="zipcode" name="zipcode" [(ngModel)]="address.zipCode" required />
+          </div>
+          <p-button type="submit" class="w-max">Edit address</p-button>
+          <p-button class="w-max" [routerLink]="['/']" severity="danger">Discard</p-button>
+        </div>
+      </form>
+  
+    </div>
+  </app-layout>

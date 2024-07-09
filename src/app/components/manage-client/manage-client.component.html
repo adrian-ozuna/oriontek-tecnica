@@ -1,0 +1,29 @@
+<app-layout>
+    <div class="flex flex-row justify-content-between align-items-start">
+        <p class="text-4xl mb-5">{{client.firstName}} {{client.lastName}}'s addresses:</p>
+        <p-button [routerLink]="['/client', client.id, 'address', 'add']">Add address</p-button>
+    </div>
+    <p-table [value]="addresses" styleClass="p-datatable-striped"  [tableStyle]="{ 'min-width': '50rem' }">
+        <ng-template pTemplate="header">
+            <tr>
+                <th>Street</th>
+                <th>City</th>
+                <th>Zip</th>
+                <th>Action</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-address>
+            <tr>
+                <td>{{ address.street }}</td>
+                <td>{{ address.city }}</td>
+                <td>{{ address.zipCode }}</td>
+                <td>
+                    <div class="flex flex-row gap-2">
+                        <p-button [routerLink]="['/client', client.id, 'address', 'edit', address.id]">Edit</p-button>
+                        <p-button (click)="deleteAddress(address.id); $event.preventDefault()" severity="danger">Delete</p-button>
+                    </div>
+                </td>
+            </tr>
+        </ng-template>
+    </p-table>
+</app-layout>
